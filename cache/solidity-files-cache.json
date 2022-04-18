@@ -1,0 +1,3371 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/multisig/MultiSigWalletWithDailyLimitFactory.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "94ed576bc4eb159275cf70f1b0eecc3d",
+      "sourceName": "contracts/multisig/MultiSigWalletWithDailyLimitFactory.sol",
+      "solcConfig": {
+        "version": "0.4.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.4.15",
+        "^0.4.15",
+        "^0.4.15",
+        "^0.4.15"
+      ],
+      "artifacts": [
+        "Factory",
+        "MultiSigWallet",
+        "MultiSigWalletWithDailyLimit",
+        "MultiSigWalletWithDailyLimitFactory"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/PangolinPair.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "77aadef5e4317d50c22f7c3535d85dac",
+      "sourceName": "contracts/pangolin-core/PangolinPair.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPangolinPair.sol",
+        "./PangolinERC20.sol",
+        "./libraries/Math.sol",
+        "./libraries/UQ112x112.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IPangolinFactory.sol",
+        "./interfaces/IPangolinCallee.sol"
+      ],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "PangolinPair"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/PangolinERC20.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "ea0ad4515df1eba002bd9575abd7b70c",
+      "sourceName": "contracts/pangolin-core/PangolinERC20.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPangolinERC20.sol",
+        "./libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "PangolinERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/libraries/Math.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "bee6c1959728d5d42c14151076cebd83",
+      "sourceName": "contracts/pangolin-core/libraries/Math.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/libraries/UQ112x112.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "2a703244e9f645c6fb297a983ce7c9c4",
+      "sourceName": "contracts/pangolin-core/libraries/UQ112x112.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "UQ112x112"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/libraries/SafeMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "a65356c329efeffba75210664f5df3cd",
+      "sourceName": "contracts/pangolin-core/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/PangolinFactory.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "97a4570a70eea66cb84e01b8966f5856",
+      "sourceName": "contracts/pangolin-core/PangolinFactory.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPangolinFactory.sol",
+        "./PangolinPair.sol"
+      ],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "PangolinFactory"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/test/ERC20.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "5641d7975374a78b428a60ca8201f8a8",
+      "sourceName": "contracts/pangolin-core/test/ERC20.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../PangolinERC20.sol"
+      ],
+      "versionPragmas": [
+        "=0.5.16"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/governance/GovernorAlpha.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "8cbf0faed192f7738bee38a509eae2a9",
+      "sourceName": "contracts/governance/GovernorAlpha.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.16"
+      ],
+      "artifacts": [
+        "GovernorAlpha",
+        "PngInterface",
+        "TimelockInterface"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/governance/libraries/SafeMath.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "cea035c339007f3f8e5c97f91976a6ee",
+      "sourceName": "contracts/governance/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.16"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/governance/Timelock.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "dc6dca0372707f3e33b009dace967f82",
+      "sourceName": "contracts/governance/Timelock.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.16"
+      ],
+      "artifacts": [
+        "Timelock"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/libraries/SafeMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "cea035c339007f3f8e5c97f91976a6ee",
+      "sourceName": "contracts/pangolin-token/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.5.16"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/PNG.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "cdbc8af6a9b62e0c080eb8534418e34b",
+      "sourceName": "contracts/pangolin-token/PNG.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.5.16"
+      ],
+      "artifacts": [
+        "Png"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/WAVAX.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "8f3b1e8e469578b21da6a9d46ba764fe",
+      "sourceName": "contracts/WAVAX.sol",
+      "solcConfig": {
+        "version": "0.5.16",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.6"
+      ],
+      "artifacts": [
+        "WAVAX"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/RouterEventEmitter.sol": {
+      "lastModificationDate": 1650257761408,
+      "contentHash": "7158a67ba8eb5ec6369b5b4d300a3711",
+      "sourceName": "contracts/pangolin-periphery/test/RouterEventEmitter.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IPangolinRouter.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "RouterEventEmitter"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/PangolinRouter.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "320aa1b967458752023e620181424192",
+      "sourceName": "contracts/pangolin-periphery/PangolinRouter.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../pangolin-core/interfaces/IPangolinFactory.sol",
+        "../pangolin-lib/libraries/TransferHelper.sol",
+        "./interfaces/IPangolinRouter.sol",
+        "./libraries/PangolinLibrary.sol",
+        "./libraries/SafeMath.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IWAVAX.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "PangolinRouter"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/ERC20.sol": {
+      "lastModificationDate": 1650257761408,
+      "contentHash": "3c84c6f456884e55b360a8450d0f0446",
+      "sourceName": "contracts/pangolin-periphery/test/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/DeflatingERC20.sol": {
+      "lastModificationDate": 1650257761408,
+      "contentHash": "7476ba791f9afb6f870f10560972e0a0",
+      "sourceName": "contracts/pangolin-periphery/test/DeflatingERC20.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.6"
+      ],
+      "artifacts": [
+        "DeflatingERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/mini-chef/MiniChefV2.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "67b79026523b3429f2e414a40e07a1ca",
+      "sourceName": "contracts/mini-chef/MiniChefV2.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol",
+        "openzeppelin-contracts-legacy/access/Ownable.sol",
+        "openzeppelin-contracts-legacy/math/SignedSafeMath.sol",
+        "openzeppelin-contracts-legacy/utils/SafeCast.sol",
+        "./IRewarder.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IMigratorChef",
+        "MiniChefV2"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol": {
+      "lastModificationDate": 1650259289416,
+      "contentHash": "880eac69aa64dae6e3b5585d6b1164cc",
+      "sourceName": "@boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BoringMath",
+        "BoringMath128",
+        "BoringMath32",
+        "BoringMath64"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/mini-chef/IRewarder.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "af0677fdacea111a1d9d4ddd52a60b70",
+      "sourceName": "contracts/mini-chef/IRewarder.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IRewarder"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol": {
+      "lastModificationDate": 1650259289416,
+      "contentHash": "a4d43d9bcdfe02388479f9397ee036e1",
+      "sourceName": "@boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "BoringERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@boringcrypto/boring-solidity/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1650259289413,
+      "contentHash": "42230f2725522218364239f02170f9bc",
+      "sourceName": "@boringcrypto/boring-solidity/contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/mini-chef/RewarderViaMultiplier.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "e6da50a10c2db8709f9dd4ceaad796cb",
+      "sourceName": "contracts/mini-chef/RewarderViaMultiplier.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@boringcrypto/boring-solidity/contracts/libraries/BoringERC20.sol",
+        "@boringcrypto/boring-solidity/contracts/libraries/BoringMath.sol",
+        "./IRewarder.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "RewarderViaMultiplier"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/MockContract.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "e2b914f6c200f2b19bff3b1ee279cdf3",
+      "sourceName": "contracts/MockContract.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.4"
+      ],
+      "artifacts": [
+        "MockContract",
+        "MockInterface"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/libraries/SignedSafeMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "55ff2b58bfe9454442661a5d331c78a5",
+      "sourceName": "contracts/pangolin-token/libraries/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/PangolinBridgeMigrationRouter.sol": {
+      "lastModificationDate": 1650257761408,
+      "contentHash": "69259ba8354464eee9356ea90c3596a1",
+      "sourceName": "contracts/pangolin-periphery/PangolinBridgeMigrationRouter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../pangolin-core/interfaces/IPangolinERC20.sol",
+        "../pangolin-lib/libraries/TransferHelper.sol",
+        "./interfaces/IBridgeToken.sol",
+        "./libraries/Roles.sol",
+        "./libraries/PangolinLibrary.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.6"
+      ],
+      "artifacts": [
+        "PangolinBridgeMigrationRouter"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/libraries/Roles.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "1761d6697479e3623e7118c9cc658e53",
+      "sourceName": "contracts/pangolin-periphery/libraries/Roles.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Roles"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/libraries/PangolinLibrary.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "95e70f0d0880a3037d9ff65a8c7bcc89",
+      "sourceName": "contracts/pangolin-periphery/libraries/PangolinLibrary.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../pangolin-core/interfaces/IPangolinFactory.sol",
+        "../../pangolin-core/interfaces/IPangolinPair.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PangolinLibrary"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/libraries/SafeMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "e608df41fb534f6cf57e741ba56d6e28",
+      "sourceName": "contracts/pangolin-periphery/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.6 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/libraries/UniswapV2OracleLibrary.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "36dfa3b9b75ad340cc63ea2b5435986e",
+      "sourceName": "contracts/pangolin-periphery/libraries/UniswapV2OracleLibrary.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../pangolin-core/interfaces/IPangolinPair.sol",
+        "../../pangolin-lib/libraries/FixedPoint.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PangolinOracleLibrary"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/FixedPoint.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "c492cc83c3a6af9b3ea57a6ae117c296",
+      "sourceName": "contracts/pangolin-lib/libraries/FixedPoint.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FullMath.sol",
+        "./Babylonian.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.0 <0.8.0"
+      ],
+      "artifacts": [
+        "FixedPoint"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/FullMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "6b99176c255e27b4447fec2da7e63558",
+      "sourceName": "contracts/pangolin-lib/libraries/FullMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0 <0.8.0"
+      ],
+      "artifacts": [
+        "FullMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/FixedPointTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "667fbf4f1d27b4031969e7eff4acd72b",
+      "sourceName": "contracts/pangolin-lib/test/FixedPointTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/FixedPoint.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "FixedPointTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/FullMathTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "748eba321c0f5b6dd491849a37e2ce81",
+      "sourceName": "contracts/pangolin-lib/test/FullMathTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/FullMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "FullMathTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/BridgeToken.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "4ec6f4b90e8b1747005ad6b6c2e81a1a",
+      "sourceName": "contracts/pangolin-periphery/test/BridgeToken.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./library/openzeppelin/ERC20Burnable.sol",
+        "../libraries/Roles.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BridgeToken"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/library/openzeppelin/ERC20Burnable.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "19f0f737ec8d5c885b66db136029fcb4",
+      "sourceName": "contracts/pangolin-periphery/test/library/openzeppelin/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol",
+        "./ERC20.sol",
+        "./OpenZeppelinSafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/library/openzeppelin/Context.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "contracts/pangolin-periphery/test/library/openzeppelin/Context.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/library/openzeppelin/ERC20.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "bb8f6d2508738bb6281a7f8964cc1617",
+      "sourceName": "contracts/pangolin-periphery/test/library/openzeppelin/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol",
+        "./IERC20.sol",
+        "./OpenZeppelinSafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/library/openzeppelin/OpenZeppelinSafeMath.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "cf8189f41b2e7eaa038145dc14734fe2",
+      "sourceName": "contracts/pangolin-periphery/test/library/openzeppelin/OpenZeppelinSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "OpenZeppelinSafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/test/library/openzeppelin/IERC20.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "contracts/pangolin-periphery/test/library/openzeppelin/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/TransferHelperTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "53e4c033621ab506bb99a494e81152d9",
+      "sourceName": "contracts/pangolin-lib/test/TransferHelperTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/TransferHelper.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "TransferHelperTest",
+        "TransferHelperTestFakeERC20Compliant",
+        "TransferHelperTestFakeERC20Noncompliant",
+        "TransferHelperTestFakeFallback"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/governance/CommunityTreasury.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "866428735cafbd9e64985176c7e2efb1",
+      "sourceName": "contracts/governance/CommunityTreasury.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-contracts-legacy/access/Ownable.sol",
+        "openzeppelin-contracts-legacy/token/ERC20/SafeERC20.sol",
+        "openzeppelin-contracts-legacy/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.6"
+      ],
+      "artifacts": [
+        "CommunityTreasury"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/access/Ownable.sol": {
+      "lastModificationDate": 1650259289811,
+      "contentHash": "38c56382c57a9e9dab92cee051155870",
+      "sourceName": "openzeppelin-contracts-legacy/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/token/ERC20/SafeERC20.sol": {
+      "lastModificationDate": 1650259289845,
+      "contentHash": "33e22842646d746e5c4124c2fdc051aa",
+      "sourceName": "openzeppelin-contracts-legacy/token/ERC20/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1650259289844,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "openzeppelin-contracts-legacy/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/GSN/Context.sol": {
+      "lastModificationDate": 1650259289814,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "openzeppelin-contracts-legacy/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/math/SafeMath.sol": {
+      "lastModificationDate": 1650259289824,
+      "contentHash": "4d29a22b28b7ec0e89c3cdf1c5e72b83",
+      "sourceName": "openzeppelin-contracts-legacy/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/utils/Address.sol": {
+      "lastModificationDate": 1650259289858,
+      "contentHash": "72d77402f6854b7ccf9af282e805f292",
+      "sourceName": "openzeppelin-contracts-legacy/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/staking-rewards/StakingRewards.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "d8925ed63581b4a2ab6d470e61872176",
+      "sourceName": "contracts/staking-rewards/StakingRewards.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-contracts-legacy/access/Ownable.sol",
+        "openzeppelin-contracts-legacy/math/Math.sol",
+        "openzeppelin-contracts-legacy/math/SafeMath.sol",
+        "openzeppelin-contracts-legacy/token/ERC20/SafeERC20.sol",
+        "openzeppelin-contracts-legacy/utils/ReentrancyGuard.sol",
+        "../pangolin-token/IPangolinERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.6"
+      ],
+      "artifacts": [
+        "StakingRewards"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/math/Math.sol": {
+      "lastModificationDate": 1650259289823,
+      "contentHash": "e5c844515b04deabacef7eb872abc384",
+      "sourceName": "openzeppelin-contracts-legacy/math/Math.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/utils/ReentrancyGuard.sol": {
+      "lastModificationDate": 1650259289865,
+      "contentHash": "1c60f58cee45c61469e1aea31e4dd879",
+      "sourceName": "openzeppelin-contracts-legacy/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/utils/SafeCast.sol": {
+      "lastModificationDate": 1650259289867,
+      "contentHash": "c227dcf457382aabf2d78218f6457799",
+      "sourceName": "openzeppelin-contracts-legacy/utils/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/openzeppelin-contracts-legacy/math/SignedSafeMath.sol": {
+      "lastModificationDate": 1650259289824,
+      "contentHash": "159169e078460f380436878421b73431",
+      "sourceName": "openzeppelin-contracts-legacy/math/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/AddressStringUtil.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "363f88e45bb2b2b1bd36529e88445668",
+      "sourceName": "contracts/pangolin-lib/libraries/AddressStringUtil.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.8.0"
+      ],
+      "artifacts": [
+        "AddressStringUtil"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/AddressStringUtilTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "4f11fc00c5e5de06d1d8a7cb46af28fe",
+      "sourceName": "contracts/pangolin-lib/test/AddressStringUtilTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/AddressStringUtil.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "AddressStringUtilTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/SafeERC20Namer.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "8ab2e10564b4edc6113b3a3f4b373ba2",
+      "sourceName": "contracts/pangolin-lib/libraries/SafeERC20Namer.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AddressStringUtil.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "SafeERC20Namer"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/SafeERC20NamerTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "7909f1becab0f21dc826cdfbdbf712b2",
+      "sourceName": "contracts/pangolin-lib/test/SafeERC20NamerTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeERC20Namer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "NamerTestFakeCompliantERC20",
+        "NamerTestFakeNoncompliantERC20",
+        "NamerTestFakeOptionalERC20",
+        "SafeERC20NamerTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/PairNamer.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "8d4dbcb34c621236404be489533776b7",
+      "sourceName": "contracts/pangolin-lib/libraries/PairNamer.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeERC20Namer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PairNamer"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/PairNamerTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "34b67ca04b59e329a28fa01fdcc609af",
+      "sourceName": "contracts/pangolin-lib/test/PairNamerTest.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/PairNamer.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PairNamerTest",
+        "PairNamerTestFakeToken"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/Claimable.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "08e93665c17735cd70d597b560515e38",
+      "sourceName": "contracts/Claimable.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Claimable"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1650259289541,
+      "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1650259289578,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/treasury-vester/TreasuryVester.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "9c732867c0254e555cdf8cbfe0cf800f",
+      "sourceName": "contracts/treasury-vester/TreasuryVester.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IMiniChefV2",
+        "IPng",
+        "TreasuryVester"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1650259289608,
+      "contentHash": "76814c83c32552ed2b521c816b4d801a",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1650259289607,
+      "contentHash": "302d9755e46bc69d7058b0cbe7185e37",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1650259289541,
+      "contentHash": "4cff8b2ea0d958750786b4e3ca308445",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/revenue-distributor/RevenueDistributor.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "79cf35c85334deee4d0eca097989e533",
+      "sourceName": "contracts/revenue-distributor/RevenueDistributor.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RevenueDistributor"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/fee-collector/FeeCollector.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "8dc829751921cc60b40bd373c8f5e70c",
+      "sourceName": "contracts/fee-collector/FeeCollector.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "../pangolin-core/interfaces/IPangolinPair.sol",
+        "../pangolin-periphery/interfaces/IPangolinRouter.sol",
+        "../staking-rewards/IStakingRewards.sol",
+        "../mini-chef/IMiniChef.sol"
+      ],
+      "versionPragmas": [
+        "0.8.9"
+      ],
+      "artifacts": [
+        "PangolinFeeCollector"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/interfaces/IPangolinPair.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "13b57f242843f006e9a34ad0301f1311",
+      "sourceName": "contracts/pangolin-core/interfaces/IPangolinPair.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPangolinPair"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/interfaces/IPangolinRouter.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "dc96721ed3d13b27870460d2a2bd15e1",
+      "sourceName": "contracts/pangolin-periphery/interfaces/IPangolinRouter.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IPangolinRouter"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/staking-rewards/IStakingRewards.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "9149482d0353535032b57b6c1cc0ff1d",
+      "sourceName": "contracts/staking-rewards/IStakingRewards.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.9"
+      ],
+      "artifacts": [
+        "IStakingRewards"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/mini-chef/IMiniChef.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "23d294c7e06765bfd90a5ae54807c10f",
+      "sourceName": "contracts/mini-chef/IMiniChef.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.9"
+      ],
+      "artifacts": [
+        "IMiniChef"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/interfaces/IWAVAX.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "af8274e03ecc4949d89d9107ada17a43",
+      "sourceName": "contracts/pangolin-periphery/interfaces/IWAVAX.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IWAVAX"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "0f90f976ad8350b002e7c21344cb9b88",
+      "sourceName": "contracts/pangolin-lib/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/libraries/Babylonian.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "6cc4613388b672fbb792b9f6e2e28399",
+      "sourceName": "contracts/pangolin-lib/libraries/Babylonian.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "Babylonian"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/BabylonianTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "dd07fae84a9baaa9b22287a2efc39e3f",
+      "sourceName": "contracts/pangolin-lib/test/BabylonianTest.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Babylonian.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "BabylonianTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-lib/test/BabylonianEchidnaTest.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "fbf66d9eea57817e3566b7a5fc28c817",
+      "sourceName": "contracts/pangolin-lib/test/BabylonianEchidnaTest.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Babylonian.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "BabylonianEchidnaTest"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/interfaces/IPangolinCallee.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "cb42352640ef2580049cc4bbcc69e9cd",
+      "sourceName": "contracts/pangolin-core/interfaces/IPangolinCallee.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPangolinCallee"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/interfaces/IPangolinFactory.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "0cece940e3c7445637b8e966db2d341e",
+      "sourceName": "contracts/pangolin-core/interfaces/IPangolinFactory.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPangolinFactory"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/interfaces/IERC20.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "3d2b948a9266ee66b6e739de97c7e6e9",
+      "sourceName": "contracts/pangolin-core/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-core/interfaces/IPangolinERC20.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "e452f3ecf5f65754d5bd249cdd3e6632",
+      "sourceName": "contracts/pangolin-core/interfaces/IPangolinERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPangolinERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/interfaces/IBridgeToken.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "473b6a62701c91faefcd7461ae7fab63",
+      "sourceName": "contracts/pangolin-periphery/interfaces/IBridgeToken.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../pangolin-core/interfaces/IPangolinERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IBridgeToken"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-periphery/interfaces/IERC20.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "3d2b948a9266ee66b6e739de97c7e6e9",
+      "sourceName": "contracts/pangolin-periphery/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1650259289600,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1650259289601,
+      "contentHash": "f48de0eaae9544072b8766e2eac528a7",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/fee-collector/DummyERC20.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "e02001701c75b31c1be08e8d61111f31",
+      "sourceName": "contracts/fee-collector/DummyERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.9"
+      ],
+      "artifacts": [
+        "DummyERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/governance/PangolinVoteCalculator.sol": {
+      "lastModificationDate": 1650257761410,
+      "contentHash": "d00bf20918f3fd30df2b6efaf809fd18",
+      "sourceName": "contracts/governance/PangolinVoteCalculator.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IMiniChefV2",
+        "IPangolinERC20",
+        "IPangolinPair",
+        "IStakingRewards",
+        "PangolinVoteCalculator"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/IPangolinERC20.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "e452f3ecf5f65754d5bd249cdd3e6632",
+      "sourceName": "contracts/pangolin-token/IPangolinERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPangolinERC20"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/Airdrop.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "54734d1b6766e2626ee597b2b4292923",
+      "sourceName": "contracts/pangolin-token/Airdrop.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Airdrop",
+        "IPNG"
+      ]
+    },
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/mini-chef-zapper/MiniChefV2Zapper.sol": {
+      "lastModificationDate": 1650257761409,
+      "contentHash": "ec6c57c27634a63a680b7174a1d2a3d4",
+      "sourceName": "contracts/mini-chef-zapper/MiniChefV2Zapper.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../pangolin-core/interfaces/IERC20.sol",
+        "../pangolin-core/interfaces/IPangolinPair.sol",
+        "../pangolin-periphery/interfaces/IPangolinRouter.sol",
+        "../pangolin-periphery/interfaces/IWAVAX.sol",
+        "../pangolin-lib/libraries/Babylonian.sol",
+        "../pangolin-lib/libraries/TransferHelper.sol"
+      ],
+      "versionPragmas": [
+        "0.8.11"
+      ],
+      "artifacts": [
+        "IMiniChefV2",
+        "MiniChefV2Zapper"
+      ]
+    }
+  }
+}
