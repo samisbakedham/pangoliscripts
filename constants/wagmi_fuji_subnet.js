@@ -48,12 +48,12 @@ exports.VESTER_ALLOCATIONS = [
     allocation: 1579, // 10% team + 5% vc investor
   },
   {
-    recipient: "foundation", // PNG Foundation multisig
+    recipient: "foundation", // HOL Foundation multisig
     allocation: 263, // 2.5% advisory
   },
   {
     recipient: "chef", // MiniChef
-    allocation: 6053, // 57.5% LPs & PNG Staking
+    allocation: 6053, // 57.5% LPs & HOL Staking
     isMiniChef: true
   }
 ];

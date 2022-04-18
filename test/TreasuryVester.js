@@ -1,4 +1,4 @@
-// test/PNG.js
+// test/HOL.js
 // Load dependencies
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
@@ -57,7 +57,7 @@ describe("TreasuryVester.sol", function () {
 
     // get contract factories
     this.Vester = await ethers.getContractFactory("TreasuryVester");
-    this.Png = await ethers.getContractFactory("Png");
+    this.Hol = await ethers.getContractFactory("Hol");
     this.Chef = await ethers.getContractFactory("MiniChefV2");
 
   });
@@ -66,11 +66,11 @@ describe("TreasuryVester.sol", function () {
   beforeEach(async function () {
     this.recipients = generateRecipients(7);
 
-    // Deploy PNG
-    this.png = await this.Png.deploy(
+    // Deploy HOL
+    this.png = await this.Hol.deploy(
       TOTAL_SUPPLY, // max supply
       0, // initial mint
-      "PNG",
+      "HOL",
       "Pangolin"
     );
     await this.png.deployed();
@@ -559,11 +559,11 @@ describe("TreasuryVester.sol", function () {
           chance.integer({ min: 10**6, max: 50*10**9 }).toString(),
           18
         );
-      // Deploy PNG
-      this.png = await this.Png.deploy(
+      // Deploy HOL
+      this.png = await this.Hol.deploy(
         this.totalSupply, // max supply
         0, // initial mint
-        "PNG",
+        "HOL",
         "Pangolin"
       );
       await this.png.deployed();

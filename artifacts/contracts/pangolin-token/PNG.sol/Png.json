@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "Png",
-  "sourceName": "contracts/pangolin-token/PNG.sol",
+  "contractName": "Hol",
+  "sourceName": "contracts/pangolin-token/HOL.sol",
   "abi": [
     {
       "inputs": [

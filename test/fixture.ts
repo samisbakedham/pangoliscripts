@@ -3,7 +3,7 @@ export default {
     "Router": "0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106",
     "Tokens": {
         "WAVAX": "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7",
-        "PNG": "0x60781c2586d68229fde47564546784ab3faca982",
+        "HOL": "0x60781c2586d68229fde47564546784ab3faca982",
         "LINK": "0xb3fe5374f67d7a22886a0ee082b2e2f9d2651651",
         "USDT": "0xde3a24028580884448a5397872046a019649b084",
         "1INCH":"0xe54eb2c3009fa411bf24fb017f9725b973ce36f0",
@@ -26,7 +26,7 @@ export default {
     ],
     "Pairs": {
         "AVAX": {
-            "PNG": "0xd7538cabbf8605bde1f4901b47b8d42c61de0367",
+            "HOL": "0xd7538cabbf8605bde1f4901b47b8d42c61de0367",
             "ETH": "0x1acf1583bebdca21c8025e172d8e8f2817343d65",
             "WETH": "0x1acf1583bebdca21c8025e172d8e8f2817343d65",
             "WBTC": "0x7a6131110b82dacbb5872c7d352bfe071ea6a17c",
@@ -45,7 +45,7 @@ export default {
             "UMA": "0x453fae08f850056c9eed191fce71a60ccc22b31a",
             "YFI": "0x7a886b5b2f24ed0ec0b3c4a17b930e16d160bd17"
         },
-        "PNG": {
+        "HOL": {
             "ETH": "0x53b37b9a6631c462d74d65d61e1c056ea9daa637",
             "WETH": "0x53b37b9a6631c462d74d65d61e1c056ea9daa637",
             "LINK": "0x7313835802c6e8ca2a6327e6478747b71440f7a4",
@@ -57,7 +57,7 @@ export default {
         },
         "Migrated": {
             "AVAX": {
-                "PNG": "",
+                "HOL": "",
                 "ETH": "",
                 "WETH": "",
                 "WBTC": "",
@@ -76,7 +76,7 @@ export default {
                 "UMA": "",
                 "YFI": ""
             },
-            "PNG": {
+            "HOL": {
                 "ETH": "",
                 "WETH": "",
                 "LINK": "",

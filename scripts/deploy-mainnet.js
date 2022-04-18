@@ -95,8 +95,8 @@ async function main() {
      * GOVERNANCE *
      **************/
 
-    // Deploy PNG
-    const png = await deploy("Png", [
+    // Deploy HOL
+    const png = await deploy("Hol", [
         ethers.utils.parseUnits(TOTAL_SUPPLY.toString(), 18),
         ethers.utils.parseUnits(AIRDROP_AMOUNT.toString(), 18),
         PNG_SYMBOL,
@@ -194,7 +194,7 @@ async function main() {
         ]);
     }
 
-    // Deploy Revenue Distributor (Joint treasury of PNG and FPNG)
+    // Deploy Revenue Distributor (Joint treasury of HOL and FPNG)
     var revenueDistribution = [];
     for (let i = 0; i < REVENUE_DISTRIBUTION.length; i++) {
         revenueDistribution.push([
@@ -217,7 +217,7 @@ async function main() {
         revenueDistributor.address,
     ]);
 
-    // Deploy DummyERC20 for diverting some PNG emissions to PNG staking
+    // Deploy DummyERC20 for diverting some HOL emissions to HOL staking
     const dummyERC20 = await deploy("DummyERC20", [
         "Dummy ERC20",
         "PGL",
@@ -233,11 +233,11 @@ async function main() {
 
     await png.setMinter(vester.address);
     await confirmTransactionCount();
-    console.log("Transferred PNG minter role to TreasuryVester.");
+    console.log("Transferred HOL minter role to TreasuryVester.");
 
     await png.setAdmin(timelock.address);
     await confirmTransactionCount();
-    console.log("Transferred PNG ownership to Timelock.");
+    console.log("Transferred HOL ownership to Timelock.");
 
     await png.transfer(
         airdrop.address,
@@ -309,7 +309,7 @@ async function main() {
         ethers.constants.AddressZero
     );
     await confirmTransactionCount();
-    console.log("Added MiniChef pool 1 for WAVAX-PNG.");
+    console.log("Added MiniChef pool 1 for WAVAX-HOL.");
 
     // create native token paired farms for tokens in INITIAL_FARMS
     for (let i = 0; i < INITIAL_FARMS.length; i++) {

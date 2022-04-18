@@ -3,7 +3,7 @@ pragma experimental ABIEncoderV2;
 
 import "./libraries/SafeMath.sol";
 
-contract Png {
+contract HOL {
     /// @notice EIP-20 token name for this token
     string public name;
 
@@ -89,7 +89,7 @@ contract Png {
     event Approval(address indexed owner, address indexed spender, uint256 amount);
 
     /**
-     * @notice Construct a new PNG token
+     * @notice Construct a new HOL token
      * @param _maxSupply Maximum number of tokens that can be in circulation
      * @param initialSupply Number of tokens to mint to the message sender
      * @param _symbol EIP-20 token symbol for this token
@@ -126,7 +126,7 @@ contract Png {
         if (rawAmount == uint(-1)) {
             amount = uint96(-1);
         } else {
-            amount = safe96(rawAmount, "Png::approve: amount exceeds 96 bits");
+            amount = safe96(rawAmount, "Hol::approve: amount exceeds 96 bits");
         }
 
         allowances[msg.sender][spender] = amount;
@@ -150,16 +150,16 @@ contract Png {
         if (rawAmount == uint(-1)) {
             amount = uint96(-1);
         } else {
-            amount = safe96(rawAmount, "Png::permit: amount exceeds 96 bits");
+            amount = safe96(rawAmount, "Hol::permit: amount exceeds 96 bits");
         }
 
         bytes32 domainSeparator = keccak256(abi.encode(DOMAIN_TYPEHASH, keccak256(bytes(name)), getChainId(), address(this)));
         bytes32 structHash = keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, rawAmount, nonces[owner]++, deadline));
         bytes32 digest = keccak256(abi.encodePacked("\x19\x01", domainSeparator, structHash));
         address signatory = ecrecover(digest, v, r, s);
-        require(signatory != address(0), "Png::permit: invalid signature");
-        require(signatory == owner, "Png::permit: unauthorized");
-        require(now <= deadline, "Png::permit: signature expired");
+        require(signatory != address(0), "Hol::permit: invalid signature");
+        require(signatory == owner, "Hol::permit: unauthorized");
+        require(now <= deadline, "Hol::permit: signature expired");
 
         allowances[owner][spender] = amount;
 
@@ -182,8 +182,8 @@ contract Png {
      * @return Whether or not the transfer succeeded
      */
     function mint(address dst, uint rawAmount) external returns (bool) {
-        require(msg.sender == minter && minter != address(0), "Png::mint: unauthorized");
-        uint96 amount = safe96(rawAmount, "Png::mint: amount exceeds 96 bits");
+        require(msg.sender == minter && minter != address(0), "Hol::mint: unauthorized");
+        uint96 amount = safe96(rawAmount, "Hol::mint: amount exceeds 96 bits");
         _mintTokens(dst, amount);
         return true;
     }
@@ -195,7 +195,7 @@ contract Png {
      * @return Whether or not the transfer succeeded
      */
     function transfer(address dst, uint rawAmount) external returns (bool) {
-        uint96 amount = safe96(rawAmount, "Png::transfer: amount exceeds 96 bits");
+        uint96 amount = safe96(rawAmount, "Hol::transfer: amount exceeds 96 bits");
         _transferTokens(msg.sender, dst, amount);
         return true;
     }
@@ -210,10 +210,10 @@ contract Png {
     function transferFrom(address src, address dst, uint rawAmount) external returns (bool) {
         address spender = msg.sender;
         uint96 spenderAllowance = allowances[src][spender];
-        uint96 amount = safe96(rawAmount, "Png::approve: amount exceeds 96 bits");
+        uint96 amount = safe96(rawAmount, "Hol::approve: amount exceeds 96 bits");
 
         if (spender != src && spenderAllowance != uint96(-1)) {
-            uint96 newAllowance = sub96(spenderAllowance, amount, "Png::transferFrom: transfer amount exceeds spender allowance");
+            uint96 newAllowance = sub96(spenderAllowance, amount, "Hol::transferFrom: transfer amount exceeds spender allowance");
             allowances[src][spender] = newAllowance;
 
             emit Approval(src, spender, newAllowance);
@@ -229,7 +229,7 @@ contract Png {
      * @return Whether or not the burn succeeded
      */
     function burn(uint rawAmount) external returns (bool) {
-        uint96 amount = safe96(rawAmount, "Png::burn: amount exceeds 96 bits");
+        uint96 amount = safe96(rawAmount, "Hol::burn: amount exceeds 96 bits");
         _burnTokens(msg.sender, amount);
         return true;
     }
@@ -243,10 +243,10 @@ contract Png {
     function burnFrom(address src, uint rawAmount) external returns (bool) {
         address spender = msg.sender;
         uint96 spenderAllowance = allowances[src][spender];
-        uint96 amount = safe96(rawAmount, "Png::burnFrom: amount exceeds 96 bits");
+        uint96 amount = safe96(rawAmount, "Hol::burnFrom: amount exceeds 96 bits");
 
         if (spender != src && spenderAllowance != uint96(-1)) {
-            uint96 newAllowance = sub96(spenderAllowance, amount, "Png::burnFrom: burn amount exceeds spender allowance");
+            uint96 newAllowance = sub96(spenderAllowance, amount, "Hol::burnFrom: burn amount exceeds spender allowance");
             allowances[src][spender] = newAllowance;
 
             emit Approval(src, spender, newAllowance);
@@ -262,7 +262,7 @@ contract Png {
      * @return Whether or not the minter was set successfully
      */
     function setMinter(address newMinter) external returns (bool) {
-        require(msg.sender == admin, "Png::setMinter: unauthorized");
+        require(msg.sender == admin, "Hol::setMinter: unauthorized");
         emit MinterChanged(minter, newMinter);
         minter = newMinter;
         return true;
@@ -274,8 +274,8 @@ contract Png {
      * @return Whether or not the admin was set successfully
      */
     function setAdmin(address newAdmin) external returns (bool) {
-        require(msg.sender == admin, "Png::setAdmin: unauthorized");
-        require(newAdmin != address(0), "Png::setAdmin: cannot make zero address the admin");
+        require(msg.sender == admin, "Hol::setAdmin: unauthorized");
+        require(newAdmin != address(0), "Hol::setAdmin: cannot make zero address the admin");
         emit AdminChanged(admin, newAdmin);
         admin = newAdmin;
         return true;
@@ -287,10 +287,10 @@ contract Png {
      * @return Whether or not the maximum supply was changed
      */
     function setMaxSupply(uint newMaxSupply) external returns (bool) {
-        require(!hardcapped, "Png::setMaxSupply: function was disabled");
-        require(msg.sender == admin, "Png::setMaxSupply: unauthorized");
-        require(newMaxSupply >= totalSupply, "Png::setMaxSupply: circulating supply exceeds new max supply");
-        safe96(newMaxSupply, "Png::setMaxSupply: new max supply exceeds 96 bits");
+        require(!hardcapped, "Hol::setMaxSupply: function was disabled");
+        require(msg.sender == admin, "Hol::setMaxSupply: unauthorized");
+        require(newMaxSupply >= totalSupply, "Hol::setMaxSupply: circulating supply exceeds new max supply");
+        safe96(newMaxSupply, "Hol::setMaxSupply: new max supply exceeds 96 bits");
         emit MaxSupplyChanged(maxSupply, newMaxSupply);
         maxSupply = newMaxSupply;
         return true;
@@ -301,7 +301,7 @@ contract Png {
      * @return Whether or not the hardcap was enabled
      */
     function disableSetMaxSupply() external returns (bool) {
-        require(msg.sender == admin, "Png::disableSetMaxSupply: unauthorized");
+        require(msg.sender == admin, "Hol::disableSetMaxSupply: unauthorized");
         hardcapped = true;
         emit HardcapEnabled();
         return true;
@@ -329,9 +329,9 @@ contract Png {
         bytes32 structHash = keccak256(abi.encode(DELEGATION_TYPEHASH, delegatee, nonce, expiry));
         bytes32 digest = keccak256(abi.encodePacked("\x19\x01", domainSeparator, structHash));
         address signatory = ecrecover(digest, v, r, s);
-        require(signatory != address(0), "Png::delegateBySig: invalid signature");
-        require(nonce == nonces[signatory]++, "Png::delegateBySig: invalid nonce");
-        require(now <= expiry, "Png::delegateBySig: signature expired");
+        require(signatory != address(0), "Hol::delegateBySig: invalid signature");
+        require(nonce == nonces[signatory]++, "Hol::delegateBySig: invalid nonce");
+        require(now <= expiry, "Hol::delegateBySig: signature expired");
         return _delegate(signatory, delegatee);
     }
 
@@ -353,7 +353,7 @@ contract Png {
      * @return The number of votes the account had as of the given block
      */
     function getPriorVotes(address account, uint blockNumber) public view returns (uint96) {
-        require(blockNumber < block.number, "Png::getPriorVotes: not yet determined");
+        require(blockNumber < block.number, "Hol::getPriorVotes: not yet determined");
 
         uint32 nCheckpoints = numCheckpoints[account];
         if (nCheckpoints == 0) {
@@ -397,20 +397,20 @@ contract Png {
     }
 
     function _transferTokens(address src, address dst, uint96 amount) internal {
-        require(src != address(0), "Png::_transferTokens: cannot transfer from the zero address");
-        require(dst != address(0), "Png::_transferTokens: cannot transfer to the zero address");
+        require(src != address(0), "Hol::_transferTokens: cannot transfer from the zero address");
+        require(dst != address(0), "Hol::_transferTokens: cannot transfer to the zero address");
 
-        balances[src] = sub96(balances[src], amount, "Png::_transferTokens: transfer amount exceeds balance");
-        balances[dst] = add96(balances[dst], amount, "Png::_transferTokens: transfer amount overflows");
+        balances[src] = sub96(balances[src], amount, "Hol::_transferTokens: transfer amount exceeds balance");
+        balances[dst] = add96(balances[dst], amount, "Hol::_transferTokens: transfer amount overflows");
         emit Transfer(src, dst, amount);
 
         _moveDelegates(delegates[src], delegates[dst], amount);
     }
 
     function _burnTokens(address src, uint96 amount) internal {
-        require(src != address(0), "Png::_burnTokens: cannot burn from the zero address");
+        require(src != address(0), "Hol::_burnTokens: cannot burn from the zero address");
 
-        balances[src] = sub96(balances[src], amount, "Png::_burnTokens: burn amount exceeds balance");
+        balances[src] = sub96(balances[src], amount, "Hol::_burnTokens: burn amount exceeds balance");
         totalSupply = SafeMath.sub(totalSupply, uint(amount));
         burnedSupply = SafeMath.add(burnedSupply, uint(amount));
         emit Transfer(src, address(0), amount);
@@ -419,13 +419,13 @@ contract Png {
     }
 
     function _mintTokens(address dst, uint96 amount) internal {
-        require(dst != address(0), "Png::_mintTokens: cannot mint to the zero address");
+        require(dst != address(0), "Hol::_mintTokens: cannot mint to the zero address");
 
         totalSupply = SafeMath.add(totalSupply, uint(amount));
-        balances[dst] = add96(balances[dst], amount, "Png::_mintTokens: mint amount overflows");
+        balances[dst] = add96(balances[dst], amount, "Hol::_mintTokens: mint amount overflows");
         emit Transfer(address(0), dst, amount);
 
-        require(totalSupply <= maxSupply, "Png::_mintTokens: mint result exceeds max supply");
+        require(totalSupply <= maxSupply, "Hol::_mintTokens: mint result exceeds max supply");
 
         delegates[dst] = dst;
         _moveDelegates(address(0), delegates[dst], amount);
@@ -436,21 +436,21 @@ contract Png {
             if (srcRep != address(0)) {
                 uint32 srcRepNum = numCheckpoints[srcRep];
                 uint96 srcRepOld = srcRepNum > 0 ? checkpoints[srcRep][srcRepNum - 1].votes : 0;
-                uint96 srcRepNew = sub96(srcRepOld, amount, "Png::_moveVotes: vote amount underflows");
+                uint96 srcRepNew = sub96(srcRepOld, amount, "Hol::_moveVotes: vote amount underflows");
                 _writeCheckpoint(srcRep, srcRepNum, srcRepOld, srcRepNew);
             }
 
             if (dstRep != address(0)) {
                 uint32 dstRepNum = numCheckpoints[dstRep];
                 uint96 dstRepOld = dstRepNum > 0 ? checkpoints[dstRep][dstRepNum - 1].votes : 0;
-                uint96 dstRepNew = add96(dstRepOld, amount, "Png::_moveVotes: vote amount overflows");
+                uint96 dstRepNew = add96(dstRepOld, amount, "Hol::_moveVotes: vote amount overflows");
                 _writeCheckpoint(dstRep, dstRepNum, dstRepOld, dstRepNew);
             }
         }
     }
 
     function _writeCheckpoint(address delegatee, uint32 nCheckpoints, uint96 oldVotes, uint96 newVotes) internal {
-      uint32 blockNumber = safe32(block.number, "Png::_writeCheckpoint: block number exceeds 32 bits");
+      uint32 blockNumber = safe32(block.number, "Hol::_writeCheckpoint: block number exceeds 32 bits");
 
       if (nCheckpoints > 0 && checkpoints[delegatee][nCheckpoints - 1].fromBlock == blockNumber) {
           checkpoints[delegatee][nCheckpoints - 1].votes = newVotes;

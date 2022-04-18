@@ -14,14 +14,14 @@ describe('CommunityTreasury', function () {
     before(async function () {
         [this.addr1, this.addr2] = await ethers.getSigners();
 
-        this.PNG = await ethers.getContractFactory("Png");
+        this.HOL = await ethers.getContractFactory("Hol");
         this.Community = await ethers.getContractFactory('CommunityTreasury')
 
     });
 
     beforeEach(async function () {
-        // PNG
-        this.png = await this.PNG.deploy(OWNER_ADDRESS);
+        // HOL
+        this.png = await this.HOL.deploy(OWNER_ADDRESS);
         await this.png.deployed();
 
         // Community Treasury
@@ -37,7 +37,7 @@ describe('CommunityTreasury', function () {
     //       Constructor
     //////////////////////////////
     describe("Constructor", function () {
-        it('PNG', async function () {
+        it('HOL', async function () {
             expect(await this.community.png()).to.equal(this.png.address);
         });
 
@@ -73,7 +73,7 @@ describe('CommunityTreasury', function () {
             expect(await this.png.balanceOf(this.community.address)).to.equal(0);
 
             await expect(this.community.transfer(this.addr2.address, transferAmount)).to.be.revertedWith(
-                'Png::_transferTokens: transfer amount exceeds balance'
+                'Hol::_transferTokens: transfer amount exceeds balance'
             );
         });
     });

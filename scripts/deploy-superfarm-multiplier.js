@@ -37,7 +37,7 @@ async function main() {
     const chefAddress = MINICHEF_V2_ADDRESS; // This likely won't change
     // ---------------------------------------------------------------
 
-    const Token = await ethers.getContractFactory("Png");
+    const Token = await ethers.getContractFactory("Hol");
 
     for (const config of additionalRewardConfig) {
         // Get rewards info

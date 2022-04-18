@@ -336,7 +336,7 @@
       ],
       "artifacts": [
         "GovernorAlpha",
-        "PngInterface",
+        "HolInterface",
         "TimelockInterface"
       ]
     },
@@ -447,10 +447,10 @@
         "SafeMath"
       ]
     },
-    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/PNG.sol": {
+    "/Users/safahi/Desktop/exchange-contracts-main/contracts/pangolin-token/HOL.sol": {
       "lastModificationDate": 1650257761409,
       "contentHash": "cdbc8af6a9b62e0c080eb8534418e34b",
-      "sourceName": "contracts/pangolin-token/PNG.sol",
+      "sourceName": "contracts/pangolin-token/HOL.sol",
       "solcConfig": {
         "version": "0.5.16",
         "settings": {
@@ -481,7 +481,7 @@
         "^0.5.16"
       ],
       "artifacts": [
-        "Png"
+        "Hol"
       ]
     },
     "/Users/safahi/Desktop/exchange-contracts-main/contracts/WAVAX.sol": {
@@ -2374,7 +2374,7 @@
       ],
       "artifacts": [
         "IMiniChefV2",
-        "IPng",
+        "IHol",
         "TreasuryVester"
       ]
     },

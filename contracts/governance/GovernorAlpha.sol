@@ -21,7 +21,7 @@ contract GovernorAlpha {
     TimelockInterface public timelock;
 
     /// @notice The address of the Pangolin governance token
-    PngInterface public png;
+    HolInterface public png;
 
     /// @notice The address of the Governor Guardian
     address public guardian;
@@ -132,7 +132,7 @@ contract GovernorAlpha {
 
     constructor(address timelock_, address png_, address guardian_, uint threshold_) public {
         timelock = TimelockInterface(timelock_);
-        png = PngInterface(png_);
+        png = HolInterface(png_);
         guardian = guardian_;
         proposalThreshold = threshold_;
     }
@@ -335,6 +335,6 @@ interface TimelockInterface {
     function executeTransaction(address target, uint value, string calldata signature, bytes calldata data, uint eta) external payable returns (bytes memory);
 }
 
-interface PngInterface {
+interface HolInterface {
     function getPriorVotes(address account, uint blockNumber) external view returns (uint96);
 }

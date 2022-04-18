@@ -43,11 +43,11 @@ The deployment script transfers the amount specified in the config to the Airdro
 
 ### Treasury Vester
 
-The deployment script transfers all the PNG (except what went to Airdrop) to `TreasuryVester`. After the deployment, the multisig **must** call `startVesting()` function of `TreasuryVester`. Then, a bot **must** be set up the ensure `distribute()` function of `TreasuryVester` is called every 24 hours. Vester allocation can only be changed through governance (timelock+multisig by default).
+The deployment script transfers all the HOL (except what went to Airdrop) to `TreasuryVester`. After the deployment, the multisig **must** call `startVesting()` function of `TreasuryVester`. Then, a bot **must** be set up the ensure `distribute()` function of `TreasuryVester` is called every 24 hours. Vester allocation can only be changed through governance (timelock+multisig by default).
 
-### PNG Staking
+### HOL Staking
 
-The deployment script sets up `FeeCollector` to manage funding of the PNG staking contract. A bot **must** be set up to call `harvest()` function of `FeeCollector` daily to divert MiniChef rewards to the PNG staking contract. The bot would also track swap fees accumulated in `FeeCollector` and call the `harvest()` function accordingly to distribute the swap fees to the recipients.
+The deployment script sets up `FeeCollector` to manage funding of the HOL staking contract. A bot **must** be set up to call `harvest()` function of `FeeCollector` daily to divert MiniChef rewards to the HOL staking contract. The bot would also track swap fees accumulated in `FeeCollector` and call the `harvest()` function accordingly to distribute the swap fees to the recipients.
 
 ### Revenue Distributor
 
