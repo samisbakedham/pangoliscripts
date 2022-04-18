@@ -233,11 +233,11 @@ async function main() {
 
     await png.setMinter(vester.address);
     await confirmTransactionCount();
-    console.log("Transferred PNG minter role to TreasuryVester.");
+    console.log("Transferred HOL minter role to TreasuryVester.");
 
     await png.setAdmin(timelock.address);
     await confirmTransactionCount();
-    console.log("Transferred PNG ownership to Timelock.");
+    console.log("Transferred HOL ownership to Timelock.");
 
     await png.transfer(
         airdrop.address,
@@ -309,7 +309,7 @@ async function main() {
         ethers.constants.AddressZero
     );
     await confirmTransactionCount();
-    console.log("Added MiniChef pool 1 for WAVAX-PNG.");
+    console.log("Added MiniChef pool 1 for WAVAX-HOL.");
 
     // create native token paired farms for tokens in INITIAL_FARMS
     for (let i = 0; i < INITIAL_FARMS.length; i++) {
