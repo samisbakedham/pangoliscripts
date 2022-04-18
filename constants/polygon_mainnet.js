@@ -1,24 +1,24 @@
 const WMATIC = "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270";
 exports.WRAPPED_NATIVE_TOKEN = WMATIC;
-exports.PNG_SYMBOL = "matHOL";
+exports.PNG_SYMBOL = "HOL";
 exports.PNG_NAME = "Hollis";
-exports.TOTAL_SUPPLY = 230000000; // 230M
+exports.TOTAL_SUPPLY = 690000000; // 230M
 exports.AIRDROP_AMOUNT = 11500000; // 11.5M or 5% of max supply
 exports.TIMELOCK_DELAY = 3 * 24 * 60 * 60; // 3 days
 exports.MULTISIG = {
   owners: [
     "0x72C397908Cb93d1B569BBB0Ff8d3D26B7b21d730", // Trollip
-    "0x05DDF0637F80C5f156Dc415e2305aD4d9A2127b5"  // Shung
+    "0xDA315a838E918026E51A864c43766f5AE86be8c6"  // Shung
   ],
   threshold: 2
 };
 exports.USE_GNOSIS_SAFE = true;
-exports.PROPOSAL_THRESHOLD = 100000; // 100K
+exports.PROPOSAL_THRESHOLD = 2000000; // 100K
 exports.PNG_STAKING_ALLOCATION = 500, // 5x weight in minichef
 exports.WETH_PNG_FARM_ALLOCATION = 3000, // 30x weight
 exports.INITIAL_FARMS = [
   {
-    tokenA: "0xeDDc6eDe8F3AF9B4971e1Fa9639314905458bE87", // Axelar UST
+    tokenA: "0x5423063af146F5abF88Eb490486E6B53FA135eC9", // Axelar UST
     tokenB: WMATIC,
     weight: 1000
   }
@@ -30,7 +30,7 @@ exports.VESTER_ALLOCATIONS = [
   },
   {
     recipient: "multisig", // fPNG team
-    allocation: 1579, // 10% team + 5% vc investor
+    allocation: 5579, // 10% team + 5% vc investor
   },
   {
     recipient: "foundation", // PNG Foundation multisig
@@ -38,7 +38,7 @@ exports.VESTER_ALLOCATIONS = [
   },
   {
     recipient: "chef", // MiniChef
-    allocation: 6053, // 57.5% LPs & PNG Staking
+    allocation: 2053, // 57.5% LPs & PNG Staking
     isMiniChef: true
   }
 ];
