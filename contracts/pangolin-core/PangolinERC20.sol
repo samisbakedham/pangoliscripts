@@ -6,8 +6,8 @@ import './libraries/SafeMath.sol';
 contract PangolinERC20 is IPangolinERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'Pangolin Liquidity';
-    string public constant symbol = 'PGL';
+    string public constant name = 'Hollis Liquidity';
+    string public constant symbol = 'HLL';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;

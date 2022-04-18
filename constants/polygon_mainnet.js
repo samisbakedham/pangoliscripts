@@ -3,7 +3,7 @@ exports.WRAPPED_NATIVE_TOKEN = WMATIC;
 exports.PNG_SYMBOL = "HOL";
 exports.PNG_NAME = "Hollis";
 exports.TOTAL_SUPPLY = 690000000; // 230M
-exports.AIRDROP_AMOUNT = 11500000; // 11.5M or 5% of max supply
+exports.AIRDROP_AMOUNT = 21500000; // 11.5M or 5% of max supply
 exports.TIMELOCK_DELAY = 3 * 24 * 60 * 60; // 3 days
 exports.MULTISIG = {
   owners: [
