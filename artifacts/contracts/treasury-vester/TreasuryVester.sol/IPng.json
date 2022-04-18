@@ -1,6 +1,6 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "IHol",
+  "contractName": "IPng",
   "sourceName": "contracts/treasury-vester/TreasuryVester.sol",
   "abi": [
     {

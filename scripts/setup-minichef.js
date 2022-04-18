@@ -15,8 +15,8 @@ const { BigNumber } = require('ethers');
 const TWO_MILLION_PNG = BigNumber.from('2000000' + '0'.repeat(18));
 
 const poolConfig = [
-    [3000, '0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367'], // WAVAX-HOL
-    [3000, '0xC33Ac18900b2f63DFb60B554B1F53Cd5b474d4cd'], // HOL-USDCe
+    [3000, '0xd7538cABBf8605BdE1f4901B47B8D42c61DE0367'], // WAVAX-PNG
+    [3000, '0xC33Ac18900b2f63DFb60B554B1F53Cd5b474d4cd'], // PNG-USDCe
     [2000, '0xc13E562d92F7527c4389Cd29C67DaBb0667863eA'], // USDTe-USDCe
     [2000, '0xD4CBC976E1a1A2bf6F4FeA86DEB3308d68638211'], // WAVAX-SPELL
     [2000, '0x2F151656065E1d1bE83BD5b6F5e7509b59e6512D'], // WAVAX-TIME
@@ -59,10 +59,10 @@ async function main() {
 
     const [deployer, user1] = await ethers.getSigners();
 
-    const HOL = await ethers.getContractFactory("Hol");
-    const png = await HOL.attach(PNG_ADDRESS);
+    const PNG = await ethers.getContractFactory("Png");
+    const png = await PNG.attach(PNG_ADDRESS);
 
-    // Large HOL holder
+    // Large PNG holder
     const acc = '0x348b11CF986e8E1CdA10c4A7E375aA252b47fc55';
 
     await network.provider.request({
@@ -167,9 +167,9 @@ Pangolin is moving to a significantly improved tokenomics system allowing the pr
 ## What is changing?
 The system powering farming rewards will require one final migration and will receive boosted rewards for the first 30 days to compensate farmers for the transition. 
 
-This will shorten the total token emission period because emitting HOL over 28 years is too long of a timeframe for DeFi. The diluted market cap of Pangolin will change from 530m HOL to 230m HOL over the course of approximately 3 years from now. 
+This will shorten the total token emission period because emitting PNG over 28 years is too long of a timeframe for DeFi. The diluted market cap of Pangolin will change from 530m PNG to 230m PNG over the course of approximately 3 years from now. 
 
-This will also grow the treasury from 13m HOL to 30m HOL over the course of 29 months, enabling Pangolin to further innovate and continue to add new features and improve the user experience.
+This will also grow the treasury from 13m PNG to 30m PNG over the course of 29 months, enabling Pangolin to further innovate and continue to add new features and improve the user experience.
  
 The farming pools will be focused to 37 farms at launch and can still be amended by the community via the Pangolin multisig.
 
@@ -181,9 +181,9 @@ Users will need to take a single action and migrate their funds from the current
 ## Technical Proposal
 We will deploy MiniChefV2 which will manage the farming rewards. 
 
-We will implement TreasuryVesterProxy around the TreasuryVester that will divert funds over the course of 960 days to farming rewards, the treasury, and burning excess HOL. 
+We will implement TreasuryVesterProxy around the TreasuryVester that will divert funds over the course of 960 days to farming rewards, the treasury, and burning excess PNG. 
 
-We will transfer 2M HOL from CommunityTreasury to MiniChefV2 boosting the first 30 days of the new rewards system. 
+We will transfer 2M PNG from CommunityTreasury to MiniChefV2 boosting the first 30 days of the new rewards system. 
 
 We will add 37 farming pools with their respective weights.`;
 

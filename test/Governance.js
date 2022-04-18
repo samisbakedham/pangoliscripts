@@ -53,10 +53,10 @@ describe('Governance', function () {
 
         this.Governor = await ethers.getContractFactory("GovernorAlpha");
         this.Timelock = await ethers.getContractFactory("Timelock");
-        this.HOL = await ethers.getContractFactory("Hol");
+        this.PNG = await ethers.getContractFactory("Png");
 
-        this.Wavax = await ethers.getContractFactory("Hol");
-        this.AltCoin = await ethers.getContractFactory("Hol");
+        this.Wavax = await ethers.getContractFactory("Png");
+        this.AltCoin = await ethers.getContractFactory("Png");
         this.TreasuryVester = await ethers.getContractFactory("TreasuryVester");
         this.LpManager = await ethers.getContractFactory("LiquidityPoolManagerV2");
         this.Community = await ethers.getContractFactory("CommunityTreasury");
@@ -67,8 +67,8 @@ describe('Governance', function () {
     });
 
     beforeEach(async function () {
-        // HOL
-        this.png = await this.HOL.deploy(OWNER_ADDRESS);
+        // PNG
+        this.png = await this.PNG.deploy(OWNER_ADDRESS);
         await this.png.deployed();
         this.pngHandle2 = await this.png.connect(this.addr2);
         this.pngHandle3 = await this.png.connect(this.addr3);
@@ -288,11 +288,11 @@ describe('Governance', function () {
         it('Change Admin', async function () {
             const startTime = 1681642739;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -335,11 +335,11 @@ describe('Governance', function () {
         it('Add whitelisted Pool', async function () {
             const startTime = 1689742739;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -385,11 +385,11 @@ describe('Governance', function () {
         it('Remove Whitelisted Pool', async function () {
             const startTime = 1697742739;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -438,11 +438,11 @@ describe('Governance', function () {
         it('Change LpManager', async function () {
             const startTime = 1717742739;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -488,11 +488,11 @@ describe('Governance', function () {
             const startTime = 1737742739;
             const transferAmount = oneToken.mul(100);
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -544,11 +544,11 @@ describe('Governance', function () {
             const startTime = 1757742739;
             const transferAmount = oneToken.mul(100);
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -597,11 +597,11 @@ describe('Governance', function () {
             const startTime = 1777742739;
             const transferAmount = oneToken.mul(100);
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -649,11 +649,11 @@ describe('Governance', function () {
         it('Failed vote', async function () {
             const startTime = 1785395565;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -699,11 +699,11 @@ describe('Governance', function () {
         it('Set start time', async function () {
             const startTime = 1795395565;
 
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -743,11 +743,11 @@ describe('Governance', function () {
         });
 
         it('Start too early', async function () {
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);
@@ -771,11 +771,11 @@ describe('Governance', function () {
         });
 
         it('Set start block', async function () {
-            // Transfer HOL
+            // Transfer PNG
             await this.png.transfer(this.addr2.address, this.proposalThreshold);
             await this.png.transfer(this.addr3.address, this.voteThreshold);
 
-            // Delegate HOL so addresses can vote, must delegate to themselves
+            // Delegate PNG so addresses can vote, must delegate to themselves
             await this.pngHandle2.delegate(this.addr2.address);
             await this.pngHandle3.delegate(this.addr3.address);
             await this.png.delegate(OWNER_ADDRESS);

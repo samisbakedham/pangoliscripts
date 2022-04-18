@@ -5,7 +5,7 @@ import "openzeppelin-contracts-legacy/token/ERC20/SafeERC20.sol";
 import "openzeppelin-contracts-legacy/token/ERC20/IERC20.sol";
 
 /**
- * Custodian of community's HOL. Deploy this contract, then change the owner to be a
+ * Custodian of community's PNG. Deploy this contract, then change the owner to be a
  * governance protocol. Send community treasury funds to the deployed contract, then
  * spend them through governance proposals.
  */
@@ -20,14 +20,14 @@ contract CommunityTreasury is Ownable {
     }
 
     /**
-     * Transfer HOL to the destination. Can only be called by the contract owner.
+     * Transfer PNG to the destination. Can only be called by the contract owner.
      */
     function transfer(address dest, uint amount) external onlyOwner {
         png.safeTransfer(dest, amount);
     }
 
     /**
-     * Return the HOL balance of this contract.
+     * Return the PNG balance of this contract.
      */
     function balance() view external returns(uint) {
         return png.balanceOf(address(this));

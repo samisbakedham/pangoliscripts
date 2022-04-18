@@ -30,8 +30,8 @@ describe("BridgeMigrationRouter", async function() {
     type TokenSymbol = keyof typeof fixture.Tokens
     type AVAXPairsTokenSymbol = keyof typeof fixture.Pairs.AVAX
     type AVAXMigratedPairsTokenSymbol = keyof typeof fixture.Pairs.Migrated.AVAX
-    type PNGPairsTokenSymbol = keyof typeof fixture.Pairs.HOL
-    type PNGMigratedPairsTokenSymbol = keyof typeof fixture.Pairs.Migrated.HOL
+    type PNGPairsTokenSymbol = keyof typeof fixture.Pairs.PNG
+    type PNGMigratedPairsTokenSymbol = keyof typeof fixture.Pairs.Migrated.PNG
 
     before(async () => {
         await run("compile")
@@ -43,9 +43,9 @@ describe("BridgeMigrationRouter", async function() {
         const router = await ethers.getContractAt("PangolinRouter", fixture.Router)
 
         await fundWAVAX(owner, BigNumber.from(10).pow(28))
-        await fundToken(owner, fixture.Tokens.HOL, BigNumber.from(10).pow(25))
+        await fundToken(owner, fixture.Tokens.PNG, BigNumber.from(10).pow(25))
         await (await getTokenContract(fixture.Tokens.WAVAX)).approve(router.address, ethers.constants.MaxUint256)
-        await (await getTokenContract(fixture.Tokens.HOL)).approve(router.address, ethers.constants.MaxUint256)
+        await (await getTokenContract(fixture.Tokens.PNG)).approve(router.address, ethers.constants.MaxUint256)
         
         // in case we don't have the migrator deployed, it deploys migrators
         for(let tokenSymbol of Object.keys(fixture.Migrators)) {
@@ -85,25 +85,25 @@ describe("BridgeMigrationRouter", async function() {
             fixture.Pairs.Migrated.AVAX[tokenSymbol as AVAXMigratedPairsTokenSymbol] = await factory.getPair(fixture.Tokens.WAVAX, tokenAddress)
         }
 
-        // if there's no pairs in the migrators, create the pairs and add liquidity for HOL pairs
-        for(let tokenSymbol of Object.keys(fixture.Pairs.Migrated.HOL)) {
+        // if there's no pairs in the migrators, create the pairs and add liquidity for PNG pairs
+        for(let tokenSymbol of Object.keys(fixture.Pairs.Migrated.PNG)) {
             let tokenAddress = fixture.Migrators[tokenSymbol as MigratorTokenSymbol]
             if (!tokenAddress) continue
-            if (fixture.Pairs.Migrated.HOL[tokenSymbol as PNGMigratedPairsTokenSymbol] !== "") {
+            if (fixture.Pairs.Migrated.PNG[tokenSymbol as PNGMigratedPairsTokenSymbol] !== "") {
                 continue
             }
             const price = BigNumber.from("1000000000000000000")
             await router.connect(owner).addLiquidity(
-                fixture.Tokens.HOL, tokenAddress,
+                fixture.Tokens.PNG, tokenAddress,
                 price, price.mul(2), price, price.mul(2),
                 owner.address, getDeadline()
             )
 
-            let bn0 = BigNumber.from(fixture.Tokens.HOL)
+            let bn0 = BigNumber.from(fixture.Tokens.PNG)
             let bn1 = BigNumber.from(tokenAddress)
 
             let [token0, token1] = bn0.gt(bn1) ? [bn1.toHexString(), bn0.toHexString()] : [bn0.toHexString(), bn1.toHexString()]
-            fixture.Pairs.Migrated.HOL[tokenSymbol as PNGMigratedPairsTokenSymbol] = await factory.getPair(token0, token1)
+            fixture.Pairs.Migrated.PNG[tokenSymbol as PNGMigratedPairsTokenSymbol] = await factory.getPair(token0, token1)
         }
     })
 
@@ -258,14 +258,14 @@ describe("BridgeMigrationRouter", async function() {
             }
         })
 
-        describe("HOL", async function() {
+        describe("PNG", async function() {
             for(let tokenSymbol of Object.keys(fixture.Migrators)) {
                 let tokenAddress = fixture.Tokens[tokenSymbol as TokenSymbol]
-                if (!((tokenSymbol as AVAXPairsTokenSymbol) in fixture.Pairs.HOL)) continue
+                if (!((tokenSymbol as AVAXPairsTokenSymbol) in fixture.Pairs.PNG)) continue
                 if (fixture.TokensWithoutFund.includes(tokenSymbol)) continue
-                it(`Can migrate liquidity from HOL-${tokenSymbol}`, async function() {
-                    let pairAddress = fixture.Pairs.HOL[tokenSymbol as PNGPairsTokenSymbol]
-                    let toPairAddress = fixture.Pairs.Migrated.HOL[tokenSymbol as PNGPairsTokenSymbol]
+                it(`Can migrate liquidity from PNG-${tokenSymbol}`, async function() {
+                    let pairAddress = fixture.Pairs.PNG[tokenSymbol as PNGPairsTokenSymbol]
+                    let toPairAddress = fixture.Pairs.Migrated.PNG[tokenSymbol as PNGPairsTokenSymbol]
                     let migrator = fixture.Migrators[tokenSymbol as MigratorTokenSymbol]
                     await migrationRouter.connect(owner).addMigrator(tokenAddress, migrator)
                     let liquidityAmount = await fundLiquidityToken(account, pairAddress, BigNumber.from(10).pow(20))
@@ -285,7 +285,7 @@ describe("BridgeMigrationRouter", async function() {
                     expect(await fromPairContract.balanceOf(migrationRouter.address)).to.equal(0)
 
                 })
-                it(`Can compute accurately chargeback from HOL-${tokenSymbol}`, async function() {
+                it(`Can compute accurately chargeback from PNG-${tokenSymbol}`, async function() {
                     let pairAddress = fixture.Pairs.AVAX[tokenSymbol as AVAXPairsTokenSymbol]
                     let toPairAddress = fixture.Pairs.Migrated.AVAX[tokenSymbol as AVAXMigratedPairsTokenSymbol]
                     let migrator = fixture.Migrators[tokenSymbol as MigratorTokenSymbol]

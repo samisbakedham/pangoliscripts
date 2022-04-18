@@ -7,9 +7,9 @@ interface IPNG {
 }
 
 /**
- *  Contract for administering the Airdrop of xPNG to HOL holders.
- *  Arbitrary amount HOL will be made available in the airdrop. After the
- *  Airdrop period is over, all unclaimed HOL will be transferred to the
+ *  Contract for administering the Airdrop of xPNG to PNG holders.
+ *  Arbitrary amount PNG will be made available in the airdrop. After the
+ *  Airdrop period is over, all unclaimed PNG will be transferred to the
  *  community treasury.
  */
 contract Airdrop {
@@ -18,7 +18,7 @@ contract Airdrop {
     address public whitelister;
     address public remainderDestination;
 
-    // amount of HOL to transfer
+    // amount of PNG to transfer
     mapping (address => uint) public withdrawAmount;
 
     uint public totalAllocated;
@@ -30,9 +30,9 @@ contract Airdrop {
      * Initializes the contract. Sets token addresses, owner, and leftover token
      * destination. Claiming period is not enabled.
      *
-     * @param png_ the HOL token contract address
+     * @param png_ the PNG token contract address
      * @param owner_ the privileged contract owner
-     * @param remainderDestination_ address to transfer remaining HOL to when
+     * @param remainderDestination_ address to transfer remaining PNG to when
      *     claiming ends. Should be community treasury.
      */
     constructor(
@@ -51,10 +51,10 @@ contract Airdrop {
     }
 
     /**
-     * Changes the address that receives the remaining HOL at the end of the
+     * Changes the address that receives the remaining PNG at the end of the
      * claiming period. Can only be set by the contract owner.
      *
-     * @param remainderDestination_ address to transfer remaining HOL to when
+     * @param remainderDestination_ address to transfer remaining PNG to when
      *     claiming ends.
      */
     function setRemainderDestination(address remainderDestination_) external {
@@ -98,15 +98,15 @@ contract Airdrop {
     }
 
     /**
-     * Enable the claiming period and allow user to claim HOL. Before
-     * activation, this contract must have a HOL balance equal to airdropSupply
-     * All claimable HOL tokens must be whitelisted before claiming is enabled.
+     * Enable the claiming period and allow user to claim PNG. Before
+     * activation, this contract must have a PNG balance equal to airdropSupply
+     * All claimable PNG tokens must be whitelisted before claiming is enabled.
      * Only callable by the owner.
      */
     function allowClaiming() external {
         require(IPNG(png).balanceOf(
             address(this)) >= airdropSupply,
-            'Airdrop::allowClaiming: incorrect HOL supply'
+            'Airdrop::allowClaiming: incorrect PNG supply'
         );
         require(msg.sender == owner, 'Airdrop::allowClaiming: unauthorized');
         claimingAllowed = true;
@@ -114,7 +114,7 @@ contract Airdrop {
     }
 
     /**
-     * End the claiming period. All unclaimed HOL will be transferred to the address
+     * End the claiming period. All unclaimed PNG will be transferred to the address
      * specified by remainderDestination. Can only be called by the owner.
      */
     function endClaiming() external {
@@ -134,8 +134,8 @@ contract Airdrop {
     }
 
     /**
-     * Withdraw your HOL. In order to qualify for a withdrawal, the
-     * caller's address must be whitelisted. All HOL must be claimed at
+     * Withdraw your PNG. In order to qualify for a withdrawal, the
+     * caller's address must be whitelisted. All PNG must be claimed at
      * once. Only the full amount can be claimed and only one claim is
      * allowed per user.
      */
@@ -143,7 +143,7 @@ contract Airdrop {
         require(claimingAllowed, 'Airdrop::claim: Claiming is not allowed');
         require(
             withdrawAmount[msg.sender] > 0,
-            'Airdrop::claim: No HOL to claim'
+            'Airdrop::claim: No PNG to claim'
         );
 
         uint amountToClaim = withdrawAmount[msg.sender];
@@ -154,7 +154,7 @@ contract Airdrop {
             'Airdrop::claim: Transfer failed'
         );
 
-        emit HolClaimed(msg.sender, amountToClaim);
+        emit PngClaimed(msg.sender, amountToClaim);
     }
 
     /**
@@ -186,12 +186,12 @@ contract Airdrop {
         }
         require(
             totalAllocated <= airdropSupply,
-            'Airdrop::whitelistAddresses: Exceeds HOL allocation'
+            'Airdrop::whitelistAddresses: Exceeds PNG allocation'
         );
     }
 
     // Events
     event ClaimingAllowed();
     event ClaimingOver();
-    event HolClaimed(address claimer, uint amount);
+    event PngClaimed(address claimer, uint amount);
 }

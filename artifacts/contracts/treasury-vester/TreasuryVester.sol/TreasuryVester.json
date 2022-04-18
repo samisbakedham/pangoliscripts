@@ -291,7 +291,7 @@
       "name": "vestedToken",
       "outputs": [
         {
-          "internalType": "contract IHol",
+          "internalType": "contract IPng",
           "name": "",
           "type": "address"
         }

@@ -1,6 +1,6 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "HolInterface",
+  "contractName": "PngInterface",
   "sourceName": "contracts/governance/GovernorAlpha.sol",
   "abi": [
     {

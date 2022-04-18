@@ -63,7 +63,7 @@ contract PangolinVoteCalculator is Ownable {
         for (uint i; i<stakes.length; i++) {
             IStakingRewards staking = IStakingRewards(stakes[i]);
 
-            // Safety check to ensure staking token is HOL
+            // Safety check to ensure staking token is PNG
             if (staking.stakingToken() == address(png)) {
                 votes += staking.balanceOf(voter);
             }

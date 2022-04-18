@@ -19,7 +19,7 @@ const oneToken = BigNumber.from("1000000000000000000");
 // Start test block
 describe('StakingRewards', function () {
     before(async function () {
-        this.HOL = await ethers.getContractFactory("Hol");
+        this.PNG = await ethers.getContractFactory("Png");
         this.LpManager = await ethers.getContractFactory("LiquidityPoolManagerV2");
         this.LpManager2 = await ethers.getContractFactory("LiquidityPoolManagerV2");
 
@@ -30,7 +30,7 @@ describe('StakingRewards', function () {
 
         [ , this.addr2, this.addr3] = await ethers.getSigners();
 
-        this.LpToken = await ethers.getContractFactory("Hol");
+        this.LpToken = await ethers.getContractFactory("Png");
 
         // ABIs for mocks
         this.WAVAX = await ethers.getContractFactory("WAVAX");
@@ -56,7 +56,7 @@ describe('StakingRewards', function () {
         this.mockTreasuryVester = await this.MockTreasuryVester.deploy();
         await this.mockTreasuryVester.deployed();
 
-        this.png = await this.HOL.deploy(OWNER_ADDRESS);
+        this.png = await this.PNG.deploy(OWNER_ADDRESS);
         await this.png.deployed();
 
         this.lpManager = await this.LpManager.deploy(this.mockWavax.address, this.png.address,
@@ -139,7 +139,7 @@ describe('StakingRewards', function () {
             await this.stake2.stake(stakeAmount);
             await this.stake3.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -178,7 +178,7 @@ describe('StakingRewards', function () {
             // Stake first token
             await this.stake2.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -223,7 +223,7 @@ describe('StakingRewards', function () {
             // Stake first token
             await this.stake2.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -240,7 +240,7 @@ describe('StakingRewards', function () {
             // Set timestamp to finish the staking period
             await ethers.provider.send("evm_setNextBlockTimestamp", [periodFinish]);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -273,7 +273,7 @@ describe('StakingRewards', function () {
             // Stake first token
             await this.stake2.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -307,7 +307,7 @@ describe('StakingRewards', function () {
             // Stake first token
             await this.stake2.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -325,7 +325,7 @@ describe('StakingRewards', function () {
             // Set timestamp to finish the staking period
             await ethers.provider.send("evm_setNextBlockTimestamp", [periodFinish]);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards
@@ -360,7 +360,7 @@ describe('StakingRewards', function () {
             // Stake first token
             await this.stake2.stake(stakeAmount);
 
-            // Transfer HOL for vesting
+            // Transfer PNG for vesting
             await this.png.transfer(this.stakingRewards.address, vestAmount);
 
             // Call notify to get the staking contract of rewards

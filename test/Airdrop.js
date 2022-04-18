@@ -16,11 +16,11 @@ describe('Airdrop', function () {
     before(async function () {
         [ this.admin, ] = await ethers.getSigners();
         this.Airdrop = await ethers.getContractFactory("Airdrop");
-        this.HOL = await ethers.getContractFactory("Hol");
+        this.PNG = await ethers.getContractFactory("Png");
     });
 
     beforeEach(async function () {
-        this.png = await this.HOL.deploy(TOTAL_SUPPLY, AIRDROP_SUPPLY, "HOL", "Pangolin");
+        this.png = await this.PNG.deploy(TOTAL_SUPPLY, AIRDROP_SUPPLY, "PNG", "Pangolin");
         await this.png.deployed();
         this.airdrop = await this.Airdrop.deploy(AIRDROP_SUPPLY, this.png.address, this.admin.address, TREASURY);
         await this.airdrop.deployed();
@@ -176,10 +176,10 @@ describe('Airdrop', function () {
             await expect(this.airdrop.allowClaiming()).to.emit(this.airdrop, 'ClaimingAllowed')
         });
 
-        it('set claiming insufficient HOL', async function () {
+        it('set claiming insufficient PNG', async function () {
             expect((await this.airdrop.claimingAllowed())).to.be.false;
             await expect(this.airdrop.allowClaiming()).to.be.revertedWith(
-                'Airdrop::allowClaiming: incorrect HOL supply');
+                'Airdrop::allowClaiming: incorrect PNG supply');
         });
 
         it('set claiming unathorized', async function () {
@@ -193,12 +193,12 @@ describe('Airdrop', function () {
                 'Airdrop::allowClaiming: unauthorized');
         });
 
-        it('set claiming unathorized and insufficient HOL', async function () {
+        it('set claiming unathorized and insufficient PNG', async function () {
             expect((await this.airdrop.claimingAllowed())).to.be.false;
             [ , altAddr] = await ethers.getSigners();
             altContract = await this.airdrop.connect(altAddr);
             await expect(altContract.allowClaiming()).to.be.revertedWith(
-                'Airdrop::allowClaiming: incorrect HOL supply');
+                'Airdrop::allowClaiming: incorrect PNG supply');
         });
     });
 
@@ -239,7 +239,7 @@ describe('Airdrop', function () {
             await expect(this.airdrop.endClaiming()).to.emit(this.airdrop, 'ClaimingOver')
         });
 
-        it('end claiming with some claimed HOL', async function () {
+        it('end claiming with some claimed PNG', async function () {
             // whitelist address
             [ , altAddr] = await ethers.getSigners();
             altContract = await this.airdrop.connect(altAddr);
@@ -264,7 +264,7 @@ describe('Airdrop', function () {
             expect(await this.png.balanceOf(this.airdrop.address)).to.equal(0);
         });
 
-        it('end claiming with all claimed HOL', async function () {
+        it('end claiming with all claimed PNG', async function () {
             // whitelist address
             [ , altAddr] = await ethers.getSigners();
             altContract = await this.airdrop.connect(altAddr);
@@ -349,7 +349,7 @@ describe('Airdrop', function () {
             expect((await this.airdrop.claimingAllowed())).to.be.true;
 
             // Claim
-            await expect(altContract.claim()).to.emit(altContract, "HolClaimed").withArgs(altAddr.address, pngOut);
+            await expect(altContract.claim()).to.emit(altContract, "PngClaimed").withArgs(altAddr.address, pngOut);
 
             // Check balance has increased
             expect(await this.png.balanceOf(altAddr.getAddress())).to.equal(pngOut);
@@ -371,7 +371,7 @@ describe('Airdrop', function () {
                 'Airdrop::claim: Claiming is not allowed');
         });
 
-        it('HOL already claimed', async function () {
+        it('PNG already claimed', async function () {
             // Check balance starts at 0
             [ , altAddr] = await ethers.getSigners();
             altContract = await this.airdrop.connect(altAddr);
@@ -395,7 +395,7 @@ describe('Airdrop', function () {
 
             // Try to claim again
             await expect(altContract.claim()).to.be.revertedWith(
-                'Airdrop::claim: No HOL to claim');
+                'Airdrop::claim: No PNG to claim');
         });
 
         it('Nothing to claim', async function () {
@@ -414,7 +414,7 @@ describe('Airdrop', function () {
 
             // Attempt claim
             await expect(altContract.claim()).to.be.revertedWith(
-                'Airdrop::claim: No HOL to claim');
+                'Airdrop::claim: No PNG to claim');
         });
 
         it('Nothing to claim but balances present', async function () {
@@ -433,7 +433,7 @@ describe('Airdrop', function () {
 
             // Attempt claim
             await expect(altContract.claim()).to.be.revertedWith(
-                'Airdrop::claim: No HOL to claim');
+                'Airdrop::claim: No PNG to claim');
         });
 
         it('Multiple successful claims', async function () {
@@ -537,12 +537,12 @@ describe('Airdrop', function () {
             expect(await this.airdrop.withdrawAmount(this.admin.address)).to.equal(pngOut2);
         });
 
-        it('Exceeds HOL supply cummulatively', async function () {
+        it('Exceeds PNG supply cummulatively', async function () {
             const pngOut = AIRDROP_SUPPLY;
 
             await expect(this.airdrop.whitelistAddresses([UNPRIVILEGED_ADDRESS, this.admin.address],
                 [pngOut, pngOut])).to.be.revertedWith(
-                'Airdrop::whitelistAddresses: Exceeds HOL allocation'
+                'Airdrop::whitelistAddresses: Exceeds PNG allocation'
             );
         });
 

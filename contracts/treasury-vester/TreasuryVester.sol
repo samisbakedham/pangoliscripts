@@ -9,7 +9,7 @@ interface IMiniChefV2 {
     function fundRewards(uint256 newFunding, uint256 duration) external;
 }
 
-interface IHol is IERC20 {
+interface IPng is IERC20 {
     function mint(address dst, uint rawAmount) external returns (bool);
 }
 
@@ -18,7 +18,7 @@ interface IHol is IERC20 {
  * It only distributes a single token with a `mint` function.
  */
 contract TreasuryVester is Ownable {
-    using SafeERC20 for IHol;
+    using SafeERC20 for IPng;
 
     struct Recipient{
         address account;
@@ -33,7 +33,7 @@ contract TreasuryVester is Ownable {
     address public guardian;
 
     /// @notice The token to be vested/minted
-    IHol public immutable vestedToken;
+    IPng public immutable vestedToken;
 
     /// @notice Whether the vesting is enabled or not
     bool public vestingEnabled;
@@ -85,7 +85,7 @@ contract TreasuryVester is Ownable {
         require(newGuardian != address(0), "TreasuryVester::Constructor: invalid guardian address");
         require(newVestedToken != address(0), "TreasuryVester::Constructor: invalid token address");
         guardian = newGuardian;
-        vestedToken = IHol(newVestedToken);
+        vestedToken = IPng(newVestedToken);
         startingBalance = newStartingBalance;
         setRecipients(newRecipients);
     }

@@ -495,7 +495,7 @@
       "name": "png",
       "outputs": [
         {
-          "internalType": "contract HolInterface",
+          "internalType": "contract PngInterface",
           "name": "",
           "type": "address"
         }
