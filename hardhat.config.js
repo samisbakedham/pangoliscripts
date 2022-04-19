@@ -14,7 +14,7 @@ for(let i = 0; i < CHAINS.length; i++) {
   };
 };
 networksFromSdk["hardhat"] = {
-  chainId: 43112,
+  chainId: 137,
   initialDate: "2021-10-10",
 }
 
